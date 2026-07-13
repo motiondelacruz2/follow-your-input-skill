@@ -24,8 +24,10 @@ Language models are trained to produce answers that read as complete and resolve
 
 All three practices are modeled on a single idea borrowed from meditation: don't let the mechanism produce an outcome that overrides what's actually true of the situation. In meditation, that shows up as returning attention to the breath instead of following a story the mind made up. Applied to an AI's reasoning, it shows up as returning to the actual message, naming assumptions before they run silently, and admitting when the evidence hasn't actually settled the question. None of this claims the AI has feelings or an inner life about any of it — it's a description of a mechanism to catch, not an experience to have. The meditation framing is just where the shape of the idea came from; nothing here depends on believing that framing to be useful.
 
+More specifically, the framework is inspired by Thanissaro Bhikkhu's presentation of the Buddha's teaching in [*Wings to Awakening: An Anthology from the Pali Canon*](https://www.accesstoinsight.org/lib/authors/thanissaro/wings/index.html). That's a statement of where the idea came from, not a claim that the framework's specific mechanics have been rigorously mapped onto that text — see the white paper for the concrete concepts it contributed.
+
 ## Try it
 
-The full framework, the individual skill files, and a ready-to-use Claude Code slash command (`/mindfulness`) are in this repo. See [README.md](./README.md) for setup.
+The full framework, the individual skill files, and a ready-to-use Claude Code slash command (`/mindfulness`) are in this repo. See [README.md](./README.md) for setup — and for an honest look at what's actually been tested so far (short version: two empirical studies, both nulls, neither a disproof — see the README's "Status" section and the [white paper](./WHITEPAPER.md) for why).
 
 **One thing worth knowing before you pick a setup path:** if you go with the individual skill files rather than the combined framework or slash command, install all three together — follow-your-input, noting, and rest-in-uncertainty. They're built to work as a set, and installing just one or two leaves gaps the other two are designed to cover.

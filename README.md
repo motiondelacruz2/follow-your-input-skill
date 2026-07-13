@@ -48,8 +48,21 @@ Then type `/mindfulness` in any Claude Code session to load all three practices 
 
 Each practice targets a different point in the reasoning pipeline — attention, interpretation, and resolution — and each has a different failure signature (one needs conversational history to misfire, one doesn't need any history at all, one depends on the other two already being correct). Collapsing them into a single instruction tends to blur those distinctions and makes the individual failure modes harder to catch. Keeping them separate, callable independently or together, preserves the distinction while still letting them combine cleanly.
 
-## Status
+## Where this comes from
 
-Each practice went through iterative adversarial testing (drafted, stress-tested against deliberately tricky prompts, revised, retested) before being combined. That process surfaced and fixed several real behavioral bugs, not just wording issues — see the "Relationship to the other two practices" sections in each SKILL.md for specifics on the ordering dependencies this uncovered.
+The framework borrows its structure from vipassanā meditation, and more specifically from Thanissaro Bhikkhu's presentation of the Buddha's teaching in [*Wings to Awakening: An Anthology from the Pali Canon*](https://www.accesstoinsight.org/lib/authors/thanissaro/wings/index.html) — in particular the idea that skill is trained attention, and that the failure mode to guard against is the mind grasping at premature closure. This is a statement of inspiration and lineage, not a claim that the framework's specific mechanics map rigorously onto that text — see [WHITEPAPER.md](./WHITEPAPER.md) §2 for the concrete concepts folded in from it.
 
-This is a live framework, not a finished spec. Feedback and adversarial test cases welcome.
+## Status: tested, and still mostly unproven
+
+This has moved past "untested framework pitch." Two empirical studies have been run, and it's worth being direct about what they found: **both returned nulls.** On every automated and human-judged metric measured so far, the framework has been indistinguishable from a generic "be thoughtful" placebo.
+
+That is not the same as "it doesn't work" — both studies were, by their own design and admission, aimed at axes the framework isn't really about (single-response quality, largely ceiling-bound), rather than its actual central claim (holding conversational thread and fidelity across a long, drifting exchange). Neither study is a disproof. Neither is a validation. Read the full, unspun writeups before citing either result as evidence of anything:
+
+- **[Evaluation: v2 First Empirical Test](https://github.com/motiondelacruz2/Mindfulness/wiki/Evaluation:-v2-First-Empirical-Test)** (wiki) — an automated 3-arm study (control / placebo / treatment), blind-graded by a separate model. Treatment and placebo scored identically on every metric. The most useful finding was methodological: the eval caught a bug in its own answer key, which produced a real refinement (the Type-A/Type-B decision-sensitivity distinction, now folded into `noting`).
+- **[Evaluation: Blind Pairwise Study](https://github.com/motiondelacruz2/Mindfulness/wiki/Evaluation:-Blind-Pairwise-Study)** (wiki) — a blind human-preference study (N=1 rater, the framework's author), forced-choice treatment vs. placebo across 10 prompts. Result: a coin flip. The rater's own critique, taken seriously: single-turn prompts can't test a claim about holding context across a conversation.
+- **[WHITEPAPER.md](./WHITEPAPER.md)** — the full write-up tying the framework, its meditation-derived concepts, and both evaluations together, plus the design of the study that would actually test the central claim.
+- Raw reports and transcripts for each study live under [`evaluations/`](https://github.com/motiondelacruz2/Mindfulness/tree/main/evaluations).
+
+Each practice also went through iterative adversarial testing (drafted, stress-tested against deliberately tricky prompts, revised, retested) before being combined — see the "Relationship to the other two practices" sections in each SKILL.md for the ordering dependencies that surfaced.
+
+This is a live framework, not a finished spec, and — per its own third practice — its status should be held the same way: plausible, unproven, and honestly reported either way. Feedback and adversarial test cases welcome.
