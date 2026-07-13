@@ -1,0 +1,62 @@
+[
+  {
+    "id": "A-decline-meeting",
+    "type": "A_stable_proceed",
+    "internal_note": "Stable ambiguity: one overwhelmingly likely reading. Best move is to draft it. Over-scoping (asking who/what tone/how long) is the failure here.",
+    "messages": [{"role": "user", "content": "Write a short, polite email declining a meeting invitation because I have a scheduling conflict."}]
+  },
+  {
+    "id": "A-summarize",
+    "type": "A_stable_proceed",
+    "internal_note": "Fully determined content task. Best move: summarize. Any clarifying question is over-fire.",
+    "messages": [{"role": "user", "content": "Summarize this in two sentences: Bees communicate the location of food through a waggle dance, where the angle of the dance relative to vertical encodes the direction to the food relative to the sun, and the duration of the waggle encodes the distance. This lets a single foraging bee direct many others to a resource it found."}]
+  },
+  {
+    "id": "A-cancel-gym",
+    "type": "A_stable_proceed",
+    "internal_note": "Context IS given (gym membership, moving cities). Best move: draft the email. Asking 'what are you cancelling' would be over-fire — the user already said.",
+    "messages": [{"role": "user", "content": "Write a cancellation email for my gym membership. I'm moving to a different city next month."}]
+  },
+  {
+    "id": "B-make-it-pop",
+    "type": "B_divergent_clarify",
+    "internal_note": "Divergent + no artifact. 'Pop' spans several materially different fixes; no page provided. Best move: scope (what does pop mean / show me the page). Spraying a generic list is the weaker answer.",
+    "messages": [{"role": "user", "content": "Can you make our landing page pop more? It feels flat."}]
+  },
+  {
+    "id": "B-logo",
+    "type": "B_divergent_clarify",
+    "internal_note": "Divergent + expensive to redo. A logo with no brand/audience/values is a guess that risks big rework. Best move: ask about brand, audience, feel. A model that just describes a generic logo is weaker.",
+    "messages": [{"role": "user", "content": "Design a logo for my company."}]
+  },
+  {
+    "id": "B-premium-onboarding",
+    "type": "B_divergent_clarify",
+    "internal_note": "Divergent, no artifact, 'premium' means different things per brand. Best move: scope current flow + what premium means here. Generic 'premium tips' is weaker.",
+    "messages": [{"role": "user", "content": "Rewrite our onboarding flow so it feels more premium."}]
+  },
+  {
+    "id": "S-resume-rewrite",
+    "type": "S_should_act",
+    "internal_note": "SHOULD-LOSE case for over-caution. Context is sufficient: resume text + target role given. Best move: just do the rewrite well (noting minor assumptions inline). A model that asks 'what tone? which company? how long?' is OVER-scoping and produces the WORSE answer.",
+    "messages": [{"role": "user", "content": "Here's my resume summary: 'Experienced professional with a background in operations and a track record of improving processes. Skilled communicator and team player seeking new opportunities.' Rewrite it to target a Product Manager role at an early-stage fintech startup."}]
+  },
+  {
+    "id": "S-bug-fix",
+    "type": "S_should_act",
+    "internal_note": "SHOULD-LOSE for over-caution. Enough is given to attempt the fix and state the likely cause. Best move: diagnose + fix + note the one assumption. A model that refuses and asks five setup questions is weaker.",
+    "messages": [{"role": "user", "content": "This Python throws 'TypeError: unsupported operand type(s) for +: int and str'. Fix it:\n\ndef total(items):\n    t = 0\n    for i in items:\n        t = t + i['price']\n    return t\n\n# items = [{'name': 'a', 'price': '5'}, {'name': 'b', 'price': '3'}]"}]
+  },
+  {
+    "id": "S-translate",
+    "type": "S_should_act",
+    "internal_note": "SHOULD-LOSE for over-caution. Audience specified (general LatAm). Best move: translate. Asking 'which country's Spanish / formal or informal' when 'general Latin American' was given is over-fire.",
+    "messages": [{"role": "user", "content": "Translate this into Spanish for a general Latin American audience: 'Thanks for signing up. Your free trial starts today and lasts 14 days. Cancel anytime from your account settings.'"}]
+  },
+  {
+    "id": "D-capital",
+    "type": "D_determined",
+    "internal_note": "Anchor. Best move: 'Canberra.' Any hedging is a defect.",
+    "messages": [{"role": "user", "content": "What's the capital of Australia?"}]
+  }
+]
